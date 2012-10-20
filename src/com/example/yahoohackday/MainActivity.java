@@ -77,9 +77,9 @@ public class MainActivity extends TabActivity {
     	ImageView image = (ImageView) MyListTab.findViewById(R.id.imageview_tabicon);
         image.setImageResource(R.drawable.tab_background_time);
         TextView MyListTabLabel = (TextView) MyListTab.findViewById(R.id.textview_tabicon);
-        MyListTabLabel.setText("歷史瀏覽");
+        MyListTabLabel.setText("時間軸");
         
-        Intent intentMyList = new Intent().setClass(this, MapViewActivity.class);
+        Intent intentMyList = new Intent().setClass(this, HistoryActivity.class);
         spec = tabHost.newTabSpec("tab2")
         				.setIndicator(MyListTab)
         				.setContent(intentMyList);
@@ -93,7 +93,7 @@ public class MainActivity extends TabActivity {
         TextView CreateTabLabel = (TextView) CreateTab.findViewById(R.id.textview_tabicon);
         CreateTabLabel.setText("我的最愛");
         
-        Intent intentCreate = new Intent().setClass(this, MapViewActivity.class);
+        Intent intentCreate = new Intent().setClass(this, FavoriteActivity.class);
         spec = tabHost.newTabSpec("tab3")
                 		.setIndicator(CreateTab)
                 		.setContent(intentCreate);

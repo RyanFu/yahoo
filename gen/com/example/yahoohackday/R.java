@@ -66,33 +66,35 @@ public final class R {
         public static final int balloon_item_snippet=0x7f04000d;
         public static final int balloon_item_title=0x7f04000c;
         public static final int balloon_main_layout=0x7f04000b;
-        public static final int button1=0x7f040003;
-        public static final int gmap=0x7f040009;
+        public static final int button1=0x7f040006;
+        public static final int gmap=0x7f04000a;
         public static final int imageView_next=0x7f040012;
-        public static final int imageview_1km=0x7f040007;
-        public static final int imageview_2km=0x7f040006;
-        public static final int imageview_500m=0x7f040008;
-        public static final int imageview_background=0x7f040005;
+        public static final int imageview_1km=0x7f040008;
+        public static final int imageview_2km=0x7f040007;
+        public static final int imageview_500m=0x7f040009;
+        public static final int imageview_background=0x7f040002;
         public static final int imageview_tabicon=0x7f04000f;
         public static final int linearlayout_toptitle=0x7f040014;
-        public static final int listview_newslist=0x7f04000a;
+        public static final int listview_newslist=0x7f040004;
         public static final int menu_settings=0x7f040018;
-        public static final int relative_distance=0x7f040004;
+        public static final int relative_distance=0x7f040003;
         public static final int relativelayout_toptitle=0x7f040015;
         public static final int textview_content_preview=0x7f040013;
         public static final int textview_tabicon=0x7f040010;
         public static final int textview_title=0x7f040011;
-        public static final int topbar=0x7f040002;
+        public static final int topbar=0x7f040005;
         public static final int topbar_text=0x7f040017;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_map_view=0x7f030001;
-        public static final int activity_news_list=0x7f030002;
-        public static final int balloon_overlay=0x7f030003;
-        public static final int custom_tab=0x7f030004;
-        public static final int listview_news_item=0x7f030005;
-        public static final int topbar=0x7f030006;
+        public static final int activity_favorite_list=0x7f030000;
+        public static final int activity_history_list=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int activity_map_view=0x7f030003;
+        public static final int activity_news_list=0x7f030004;
+        public static final int balloon_overlay=0x7f030005;
+        public static final int custom_tab=0x7f030006;
+        public static final int listview_news_item=0x7f030007;
+        public static final int topbar=0x7f030008;
     }
     public static final class menu {
         public static final int activity_main=0x7f080000;

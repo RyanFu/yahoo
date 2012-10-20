@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <ImageView android:id="@+id/imageview_background"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/top"/>
+    <RelativeLayout android:id="@+id/relative_distance"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:text="我的最愛"/>
+        </RelativeLayout>
+    <ListView
+        android:id="@+id/listview_newslist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relative_distance" >
+    </ListView>    
+</RelativeLayout>

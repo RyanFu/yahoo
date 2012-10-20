@@ -9,31 +9,39 @@
         android:background="@drawable/top"/>
     <RelativeLayout android:id="@+id/relative_distance"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         >
         <TextView 
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:gravity="center"
-	        android:textSize="20dp"
-	        android:text="範圍"/>
+	        android:layout_margin="3dp"
+	        android:layout_centerVertical="true"
+            android:gravity="center"
+	        android:textSize="18dp"
+	        android:text="顯示範圍"/>
         <ImageView android:id="@+id/imageview_2km"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/relative_distance"
+            android:layout_width="56dp"
+            android:layout_height="24dp"
             android:layout_toLeftOf="@+id/imageview_1km"
+            android:layout_margin="1dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
             android:background="@drawable/distance_background_2km"/>
         <ImageView android:id="@+id/imageview_1km"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/relative_distance"
+            android:layout_width="56dp"
+            android:layout_height="24dp"
             android:layout_toLeftOf="@+id/imageview_500m"
+            android:layout_margin="1dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
             android:background="@drawable/distance_background_1km"/>
         <ImageView android:id="@+id/imageview_500m"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/relative_distance"
+            android:layout_width="56dp"
+            android:layout_height="24dp"
             android:layout_alignParentRight="true"
+            android:layout_margin="1dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
             android:background="@drawable/distance_background_500m"/>
     </RelativeLayout>
     <com.readystatesoftware.maps.TapControlledMapView

@@ -2,9 +2,6 @@ package com.example.yahoohackday;
 
 
 
-import android.app.Activity;
-
-import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 
@@ -25,6 +22,9 @@ import com.readystatesoftware.maps.TapControlledMapView;
 
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
 
 public class MapViewActivity extends MapActivity{
 	
@@ -34,6 +34,7 @@ public class MapViewActivity extends MapActivity{
 	Drawable drawable2;
 	SimpleItemizedOverlay itemizedOverlay;
 	SimpleItemizedOverlay itemizedOverlay2;
+	ImageView onekm, twokm, fivem;
 	
 	private double currentLongitude;
 	private double currentLatitude;
@@ -136,6 +137,40 @@ public class MapViewActivity extends MapActivity{
 //			
 //		} 
 
+		findView();
+		setView(); 
+	}
+	
+	private void findView() {
+		onekm = (ImageView)findViewById(R.id.imageview_1km);
+		twokm = (ImageView)findViewById(R.id.imageview_2km);
+		fivem = (ImageView)findViewById(R.id.imageview_500m);
+		
+	}
+	
+	private void setView() {
+		twokm.setSelected(true);
+		twokm.setOnClickListener(new OnClickListener(){
+			public void onClick(View arg0) {
+				onekm.setSelected(false);
+				twokm.setSelected(true);
+				fivem.setSelected(false);
+			}			
+		});
+		onekm.setOnClickListener(new OnClickListener(){
+			public void onClick(View arg0) {
+				onekm.setSelected(true);
+				twokm.setSelected(false);
+				fivem.setSelected(false);
+			}			
+		});
+		fivem.setOnClickListener(new OnClickListener(){
+			public void onClick(View arg0) {
+				onekm.setSelected(false);
+				twokm.setSelected(false);
+				fivem.setSelected(true);
+			}			
+		});
 	}
 	
 	private void getCurrentLocation() {
