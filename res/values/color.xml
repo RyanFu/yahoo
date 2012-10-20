@@ -9,4 +9,5 @@
    <color name="transparent100">#00000000</color>
    <color name="transparent80">#33000000</color>
    <color name="transparent50">#88000000</color>
+   <color name="maintheme">#FB771E</color>
 </resources>

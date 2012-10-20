@@ -24,9 +24,10 @@ import com.readystatesoftware.maps.OnSingleTapListener;
 import com.readystatesoftware.maps.TapControlledMapView;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.MotionEvent;
 
-public class MapViewActivity extends MapActivity{
+public class MapViewActivity extends MapActivity {
 	
 	TapControlledMapView mapView; // use the custom TapControlledMapView
 	List<Overlay> mapOverlays;
@@ -40,6 +41,8 @@ public class MapViewActivity extends MapActivity{
 	private Location currentLocation;
 	
 	private ArrayList<News> newsList;
+	
+	
     
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -137,6 +140,8 @@ public class MapViewActivity extends MapActivity{
 //		} 
 
 	}
+	
+	
 	
 	private void getCurrentLocation() {
 		LocationManager locMan = (LocationManager) this.getSystemService(this.LOCATION_SERVICE);
