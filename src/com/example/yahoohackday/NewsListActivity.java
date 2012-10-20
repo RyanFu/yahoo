@@ -8,6 +8,8 @@ import com.newsmap.entity.News;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,12 +17,19 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class NewsListActivity extends Activity {
 	
 	private ListView listviewNews;
 	private ArrayList<News> newsList;
 	private String locationName;
+	private static final double EARTH_RADIUS = 6378.137;
+	private double distance;
+	
+	private TextView textviewLocation;
+	private TextView textviewDistance;
+	
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +40,42 @@ public class NewsListActivity extends Activity {
         getNewsData();
         findViews();
         setListtener();
+        countDistance();
+        
+    	textviewLocation.setText(newsList.get(0).getLocationName());
+    	
+    	java.text.DecimalFormat df= new java.text.DecimalFormat("#0.00");
+    	textviewDistance.setText(df.format(distance) + "公里");
+	}
+	
+	public void countDistance () {
+		News news = newsList.get(0);
+		double newsLong = news.getLongitude();
+		double newsLat = news.getLatitude();
+		
+		LocationManager locMan = (LocationManager) this.getSystemService(this.LOCATION_SERVICE);
+		Location location = locMan.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+		if (location == null) {
+			location = locMan.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		}
+		Location currentLocation = location;
+		
+		double currentLongitude = currentLocation.getLongitude();
+		double currentLatitude = currentLocation.getLatitude();
+			
+		//getDistance(double lat1, double lng1, double lat2, double lng2)
+
+		distance = getDistance(newsLat, newsLong, currentLatitude, currentLongitude);
+		
+		distance = distance / 1000;
+		
+		
+		
+		
+		//distance = df.format(distance);
+		//System.out.println(df.format(e));
+		
+		//Log.d("Ben", "Distance: " + df.format(distance));
 	}
 	
 	private void getNewsData() {
@@ -69,6 +114,8 @@ public class NewsListActivity extends Activity {
 	}
 	private void findViews() {
 		listviewNews = (ListView) findViewById(R.id.listview_newslist);
+		textviewLocation = (TextView) findViewById(R.id.textview_locationname);
+		textviewDistance = (TextView) findViewById(R.id.textview_distance);
 	}
 	
 	private void setListtener() {
@@ -90,4 +137,23 @@ public class NewsListActivity extends Activity {
 			}
 		});
 	}
+	
+	public double getDistance(double lat1, double lng1, double lat2, double lng2)
+	  {
+	     double radLat1 = rad(lat1);
+	     double radLat2 = rad(lat2);
+	     double a = radLat1 - radLat2;
+	     double b = rad(lng1) - rad(lng2);
+	     double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) + 
+	      Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+	     s = s * EARTH_RADIUS;
+	     s = Math.round(s * 10000) / 10000;
+	     Log.d("Ben", "Distance: " + s);
+	     return s;
+	  }
+	
+	private double rad(double d)
+	  {
+	     return d * Math.PI / 180.0;
+	  }
 }

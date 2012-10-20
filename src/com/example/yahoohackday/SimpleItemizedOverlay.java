@@ -21,11 +21,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 
+import com.newsmap.entity.News;
 import com.readystatesoftware.mapviewballoons.BalloonItemizedOverlay;
 
 public class SimpleItemizedOverlay extends BalloonItemizedOverlay<OverlayItem> {
@@ -64,10 +66,18 @@ public class SimpleItemizedOverlay extends BalloonItemizedOverlay<OverlayItem> {
 		
 		Intent intent = new Intent();
 		intent.putExtra("location_name", locationName);
+		
+		double distance = 0;
+		
+		
+		
+		intent.putExtra("distance", distance);
 		intent.setClass(c, NewsListActivity.class);
 		activity.startActivity(intent);
 		
 		return true;
 	}
+	
+	
 	
 }
