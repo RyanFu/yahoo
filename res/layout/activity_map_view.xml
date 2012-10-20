@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ImageView android:id="@+id/imageview_background"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/top"/>
+    <RelativeLayout android:id="@+id/relative_distance"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textSize="20dp"
+	        android:text="範圍"/>
+        <ImageView android:id="@+id/imageview_2km"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relative_distance"
+            android:layout_toLeftOf="@+id/imageview_1km"
+            android:background="@drawable/distance_background_2km"/>
+        <ImageView android:id="@+id/imageview_1km"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relative_distance"
+            android:layout_toLeftOf="@+id/imageview_500m"
+            android:background="@drawable/distance_background_1km"/>
+        <ImageView android:id="@+id/imageview_500m"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relative_distance"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/distance_background_500m"/>
+    </RelativeLayout>
+    <com.readystatesoftware.maps.TapControlledMapView
+	    android:id="@+id/gmap"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_below="@+id/relative_distance"
+	    android:clickable="true"
+		android:apiKey="0d4sFO09fJtCHSE40bCtul3btOzuMRaeqlu81Hg" />
+    
+</RelativeLayout>
