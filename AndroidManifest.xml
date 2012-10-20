@@ -31,6 +31,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="NewsListActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name="SlideAnimationThenCallLayout"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

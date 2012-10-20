@@ -131,7 +131,7 @@ public class NewsListActivity extends Activity {
 				intent.putExtra("url", news.getUrl());
 				intent.putExtra("title", news.getTitle());
 				
-				//intent.setClass(NewsListActivity.this, );
+				intent.setClass(NewsListActivity.this,SlideAnimationThenCallLayout.class );
 	            startActivity(intent);
 	            
 			}
