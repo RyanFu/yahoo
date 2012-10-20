@@ -1,8 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/listview_newslist"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-</ListView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp" 
+        android:background="@color/maintheme">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="28dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/newslisttitle" />
+
+        <TextView
+            android:id="@+id/textview_locationname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/imageView1"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:text="地點名稱" />
+
+        <TextView
+            android:id="@+id/textview_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="距離" />
+        
+    </RelativeLayout>
+    
+	<ListView android:id="@+id/listview_newslist"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+	</ListView>
+
+</LinearLayout>
