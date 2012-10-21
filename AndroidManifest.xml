@@ -37,6 +37,7 @@
             android:screenOrientation="portrait"></activity>
        <activity android:name="HorzScrollWithImageMenu"
             android:screenOrientation="portrait"></activity>
+       <activity android:name="SearchActivity"></activity>
     </application>
 
 </manifest>

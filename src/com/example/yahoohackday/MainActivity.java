@@ -107,7 +107,7 @@ public class MainActivity extends TabActivity {
 		TextView ActivitysTabLabel = (TextView) ActivitysTab.findViewById(R.id.textview_tabicon);
 		ActivitysTabLabel.setText("搜尋新聞");
     	        
-        Intent intentList = new Intent().setClass(this, MapViewActivity.class);
+        Intent intentList = new Intent().setClass(this, SearchActivity.class);
 		intentList.putExtra("check", false);
         spec = tabHost.newTabSpec("tab4")
         				.setIndicator(ActivitysTab)

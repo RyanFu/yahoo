@@ -35,8 +35,9 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="FavoriteActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name="SlideAnimationThenCallLayout"
+       <activity android:name="HorzScrollWithImageMenu"
             android:screenOrientation="portrait"></activity>
+       <activity android:name="SearchActivity"></activity>
     </application>
 
 </manifest>
