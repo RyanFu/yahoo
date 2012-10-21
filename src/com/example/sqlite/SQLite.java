@@ -170,8 +170,8 @@ public class SQLite extends SQLiteOpenHelper {
 		            cursor.getString(4),
 		            cursor.getString(1),
 		            cursor.getString(9),
-		            cursor.getFloat(5),
-		            cursor.getFloat(6), 0);
+		            cursor.getFloat(6),
+		            cursor.getFloat(5), 0);
             news_lst.add(news);
         }
 
@@ -211,8 +211,8 @@ public class SQLite extends SQLiteOpenHelper {
                     cursor.getString(4),
                     cursor.getString(1),
                     cursor.getString(9),
-                    cursor.getFloat(5),
-                    cursor.getFloat(6), 0);
+                    cursor.getFloat(6),
+                    cursor.getFloat(5), 0);
             news_lst.add(news);
         }
 

@@ -44,7 +44,7 @@ public class NewsListActivity extends Activity {
         
     	textviewLocation.setText(newsList.get(0).getLocationName());
     	
-    	java.text.DecimalFormat df= new java.text.DecimalFormat("#0.00");
+    	java.text.DecimalFormat df= new java.text.DecimalFormat("#0.0000");
     	textviewDistance.setText(df.format(distance) + "公里");
 	}
 	
@@ -63,11 +63,14 @@ public class NewsListActivity extends Activity {
 		double currentLongitude = currentLocation.getLongitude();
 		double currentLatitude = currentLocation.getLatitude();
 			
+		
+		Log.d("", "newsLong : " + newsLong + " newsLat : " + newsLat);
+		Log.d("", "currentLongitude : " + currentLongitude + " currentLatitude : " + currentLatitude);
 		//getDistance(double lat1, double lng1, double lat2, double lng2)
 
 		distance = getDistance(newsLat, newsLong, currentLatitude, currentLongitude);
 		
-		distance = distance / 1000;
+		//distance = distance / 1000;
 		
 		
 		
@@ -147,7 +150,7 @@ public class NewsListActivity extends Activity {
 	     double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) + 
 	      Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
 	     s = s * EARTH_RADIUS;
-	     s = Math.round(s * 10000) / 10000;
+	     s = Math.round(s * 10000) / 10000.0;
 	     Log.d("Ben", "Distance: " + s);
 	     return s;
 	  }
